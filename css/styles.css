@@ -1,3 +1,10 @@
+:root {
+    --primary-color: #4c4c4c;
+    --secondary-color:#f0f0f0;
+    --accent-color:#ff5722;
+    --text-color:#333;
+}
+
 .s {
     width: 100%;
     /* display: grid;
@@ -60,11 +67,11 @@ gap: 30px;
 }
 
 .icon2 {
-    fill: red;
+    fill: var(--secondary-color);
 }
 
 .icon2:hover {
-    fill: aqua;
+    fill: var(--accent-color);
 }
 
 .icon {
@@ -73,6 +80,10 @@ gap: 30px;
 
 .icon:hover {
     fill: aqua;
+}
+
+.current {
+    color: orange;
 }
 
 
