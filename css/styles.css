@@ -177,6 +177,30 @@ img {
     height: auto;
 }
 
+.a1 {
+  grid-area: header;
+}
+.a2 {
+  grid-area: main;
+}
+.a3 {
+  grid-area: sidebar;
+}
+.a4 {
+  grid-area: footer;
+}
+
+.container3 {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: 
+    "header header header header"
+    "main main sidebar sidebar"
+    "footer footer footer footer";
+}
+
 
 
 
