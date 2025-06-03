@@ -250,3 +250,23 @@ img {
     'main main sidebar sidebar'
     'footer footer footer footer';
 }
+
+.abs a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: red;
+  fill: rgba(237, 221, 83, 1);
+}
+
+.abs a:hover {
+  background-color: #f0f0f0;
+  fill: rgba(42, 123, 155, 1);
+}
+
+/* .n {
+  fill: currentColor;
+} */
