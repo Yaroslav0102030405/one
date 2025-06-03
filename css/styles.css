@@ -270,3 +270,107 @@ img {
 /* .n {
   fill: currentColor;
 } */
+
+.sd {
+  position: relative;
+  overflow: hidden;
+}
+
+.sd::before {
+  position: absolute;
+  content: '';
+  bottom: 0;
+  width: 100%;
+  height: 90%;
+  background-color: #f0f0f0;
+
+  transform: translateY(100%);
+  transition: transform 0.3s linear;
+}
+
+.sd:hover:before {
+  transform: translateY(0);
+}
+
+.sd:hover .d {
+  opacity: 1;
+}
+
+.d {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+
+:root {
+  --header-height: 100px;
+}
+
+body {
+  padding-top: 90px;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: yellow;
+  min-height: var(--header-height);
+  z-index: 10;
+}
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: #33333367;
+}
+
+.backdrop.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  width: 400px;
+  height: 400px;
+  padding: 20px;
+}
+
+.menu {
+  gap: 50px;
+  display: flex;
+}
+
+.menu-item {
+  position: relative;
+}
+
+.menu-item:hover .submenu {
+  display: block;
+}
+
+.menu-item:hover .menu-link {
+  background-color: #ff5722;
+}
+
+.submenu li a:hover {
+  color: aliceblue;
+}
+
+.submenu {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 100%;
+  display: none;
+  padding: 0;
+  margin: 0;
+  background-color: #3f8170;
+}

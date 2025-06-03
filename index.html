@@ -20,8 +20,8 @@
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
+    <header></header>
     <div class="container2">
-      <header></header>
       <main>
         <section><h1>Привіт!</h1></section>
         <section>
@@ -81,7 +81,12 @@
       </footer>
       <section>
         <ul class="ss">
-          <li><img width="1500" src="./images/260.webp" alt="" /></li>
+          <li>
+            <div class="sd">
+              <img width="1500" src="./images/260.webp" alt="" />
+              <div class="d"><h1>Привіт!</h1></div>
+            </div>
+          </li>
           <li><img width="1500" src="./images/260.webp" alt="" /></li>
           <li><img width="1500" src="./images/260.webp" alt="" /></li>
           <li><img width="1500" src="./images/260.webp" alt="" /></li>
@@ -114,5 +119,61 @@
         </li>
       </ul>
     </div>
+
+    <button class="btn-open" type="button">Відкрити модалку</button>
+    <div class="backdrop hidden">
+      <div class="modal">
+        <h2>dsdsdsdsds</h2>
+        <p>dsdsdsdsds</p>
+        <button class="btn-close" type="button">Закрити</button>
+      </div>
+    </div>
+
+    <ul class="menu">
+      <li class="menu-item">
+        <a class="menu-link" href="">Головна</a>
+        <ul class="submenu">
+          <li><a href="">Кино</a></li>
+          <li><a href="">Яблоки</a></li>
+          <li><a href="">Груши</a></li>
+        </ul>
+      </li>
+      <li class="menu-item">
+        <a class="menu-link" href="">Товари</a>
+        <ul class="submenu">
+          <li><a href="">Кино</a></li>
+          <li><a href="">Яблоки</a></li>
+          <li><a href="">Груши</a></li>
+        </ul>
+      </li>
+    </ul>
+
+    <script>
+      const { height: pageHeaderHeight } = document
+        .querySelector('header')
+        .getBoundingClientRect();
+
+      document.body.style.paddingTop = `${pageHeaderHeight}px`;
+    </script>
+
+    <script>
+      const btnOpen = document.querySelector('.btn-open');
+      const btnClose = document.querySelector('.btn-close');
+      const backdrop = document.querySelector('.backdrop');
+
+      btnOpen.addEventListener('click', toggleModal);
+      btnClose.addEventListener('click', toggleModal);
+      backdrop.addEventListener('click', backdropClick);
+
+      function toggleModal() {
+        backdrop.classList.toggle('hidden');
+      }
+
+      function backdropClick(e) {
+        if (e.target === e.currentTarget) {
+          toggleModal();
+        }
+      }
+    </script>
   </body>
 </html>
