@@ -386,3 +386,46 @@ header {
   margin: 0;
   background-color: #3f8170;
 }
+
+/* .checkbox {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+} */
+
+.checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  position: absolute;
+}
+
+.label {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  /* background-color: white; */
+  border: 2px solid rgba(106, 103, 103, 0.715);
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.checkbox:checked + .icon {
+  /* border-color: transparent; */
+  background-color: orange;
+  background-image: url(../images/vector.svg);
+  background-size: contain;
+  background-position: center;
+  /* background-origin: border-box; */
+}
