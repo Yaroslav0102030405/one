@@ -99,6 +99,8 @@ button {
   padding: 10px;
   background-color: violet;
   width: 250px;
+
+  transition: background-color 0.3s linear;
 }
 
 button:hover {
@@ -325,6 +327,9 @@ header {
   position: fixed;
   inset: 0;
   background-color: #33333367;
+  opacity: 1;
+
+  transition: opacity 0.3s linear;
 }
 
 .backdrop.hidden {
@@ -332,15 +337,22 @@ header {
   pointer-events: none;
 }
 
+.backdrop.hidden .modal {
+  transform: translate(-50%, -50%) scale(0.8);
+}
+
 .modal {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
   background-color: white;
   width: 400px;
   height: 400px;
   padding: 20px;
+
+  transform: translate(-50%, -50%) scale(1);
+
+  transition: transform 0.3s linear;
 }
 
 .menu {
