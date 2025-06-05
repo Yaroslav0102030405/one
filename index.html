@@ -20,7 +20,27 @@
     <link rel="stylesheet" href="./css/main.min.css" />
   </head>
   <body>
-    <header></header>
+    <header class="header">
+      <!-- <div class="menu-container"> -->
+      <a href="">Логотип</a>
+
+      <nav class="menu-container">
+        <ul>
+          <li><a href="">Головна</a></li>
+          <li><a href="">Про нас</a></li>
+          <li><a href="">Переваги</a></li>
+          <li><a href="">Послуги</a></li>
+        </ul>
+      </nav>
+
+      <button class="menu-button">
+        <svg width="40" height="40" aria-label="Переключатель мобільного меню">
+          <use class="icon-close" href="./images/close.svg"></use>
+          <use class="icon-menu" href="./images/menu.svg"></use>
+        </svg>
+      </button>
+      <!-- </div> -->
+    </header>
     <div class="container2">
       <main>
         <section><h1>Привіт!</h1></section>
@@ -30,7 +50,7 @@
         <section class="s">
           <div>
             <h2 class="title">Центр</h2>
-            <button>
+            <button class="button">
               <span>Отправить</span>
               <svg width="30" height="30">
                 <use href="./images/svg.svg#icon-twitter"></use>
@@ -173,12 +193,25 @@
 
       function toggleModal() {
         backdrop.classList.toggle('hidden');
+        document.body.classList.toggle('modal-open');
       }
 
       function backdropClick(e) {
         if (e.target === e.currentTarget) {
           toggleModal();
         }
+      }
+    </script>
+
+    <script>
+      const menuButtonRef = document.querySelector('.menu-button');
+      const mobileMenuRef = document.querySelector('.menu-container');
+
+      menuButtonRef.addEventListener('click', toggleMenu);
+
+      function toggleMenu() {
+        menuButtonRef.classList.toggle('active');
+        mobileMenuRef.classList.toggle('active');
       }
     </script>
   </body>
