@@ -252,12 +252,6 @@ a {
   }
 }
 
-img {
-  max-width: 100%;
-  display: block;
-  height: auto;
-}
-
 .a1 {
   grid-area: header;
 }
@@ -418,4 +412,43 @@ header {
 
 .section-3 {
   @extend %section;
+}
+
+.image-set {
+  @media screen and (max-width: 767px) {
+    background-image: image-set(
+      url('../images/mob.jpg') 1x,
+      url('../images/mob.jpg') 2x
+    );
+
+    width: 100%;
+    height: 500px;
+    background-repeat: no-repeat;
+  }
+}
+
+.image-set {
+  @media screen and (min-width: 768px) {
+    background-image: image-set(
+      url('../images/tab.jpg') 1x,
+      url('../images/tab.jpg') 2x
+    );
+
+    width: 100%;
+    height: 500px;
+    background-repeat: no-repeat;
+  }
+}
+
+.image-set {
+  @media screen and (min-width: 1000px) {
+    background-image: image-set(
+      url('../images/Img-320.jpg') 1x,
+      url('../images/Img-320.jpg') 2x
+    );
+
+    width: 100%;
+    height: 500px;
+    background-repeat: no-repeat;
+  }
 }

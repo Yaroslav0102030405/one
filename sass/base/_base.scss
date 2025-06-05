@@ -24,3 +24,10 @@ ul {
   margin: 0;
   list-style: none;
 }
+
+// адаптивне фото
+img {
+  max-width: 100%;
+  display: block;
+  height: auto;
+}
